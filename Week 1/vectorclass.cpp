@@ -44,11 +44,11 @@ public:
       return Vec3(
         y * other.z - z * other.y,
         z * other.x - x * other.z,
-        x * other.y - y * other.x,
+        x * other.y - y * other.x
       );
     }
     Vec3 reflect(const Vec3& normal) const {
-      return *this - (normal * (2.of *this -> dot(normal)));
+      return *this - (normal * (2.0f *this -> dot(normal)));
     }
     //helper for refract
     float length_squared() const {
