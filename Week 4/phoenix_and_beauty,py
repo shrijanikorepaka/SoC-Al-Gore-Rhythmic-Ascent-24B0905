@@ -1,0 +1,18 @@
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    distinct = list(set(a))
+
+    if len(distinct) > k:
+        print(-1)
+    else:
+        # Build base pattern of length k
+        pattern = distinct[:]
+        while len(pattern) < k:
+            pattern.append(1)  # pad with 1 or any number in 1..n
+        
+        # Repeat pattern enough times
+        result = pattern * (100)  # 100 times is safe since 100*100 = 10^4
+        print(len(result))
+        print(' '.join(map(str, result)))
